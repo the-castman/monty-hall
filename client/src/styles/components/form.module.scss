@@ -1,0 +1,82 @@
+@import '../_mixins.scss';
+
+.formControl {
+    margin-bottom: 10px;
+    
+    input {
+        @include border-radius(4px);
+
+        &[type="text"], &[type="number"] {            
+            @include input-base();
+        }
+
+        &[type="checkbox"] {
+            @include input-base();
+
+            & ~ label {
+                display: inline-block;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .checkbox {
+        display: inline-flex;
+        position: relative;
+
+        & > span {
+            padding: .8em;
+        }
+
+        & > input {
+            @include prefix(appearance, none);
+            @include prefix(transition-duration, 0.3s);
+
+            height: 25px;
+            width: 25px;
+            border: 1px solid $control-border;
+            outline: none;
+            padding: 3px;
+            cursor: pointer;
+
+            &:active {
+                border: 2px solid $control-border;
+            }
+
+            &:checked {
+                background-color: $btncolor;
+                border: 4px solid #fff;
+                @include border-radius(7px);
+
+                & + span:before {
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+}
+
+.button {
+    @include border-radius(4px);
+    @include prefix(transition, all .3s, letter-spacing 0.3s .5s);
+    
+    background: $btncolor;
+    font-weight: bold;
+    border: none;
+    padding: 1.5em;
+    width: 100%;
+
+    &:hover {
+        background: $btncolor-hover;
+        letter-spacing: 5px;
+        font-size: 30px;
+
+        cursor: pointer;
+    }    
+}

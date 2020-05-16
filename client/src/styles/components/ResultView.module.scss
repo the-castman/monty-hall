@@ -1,0 +1,67 @@
+@import '../mixins.scss';
+@import '../animations.scss';
+
+.resultContainer {
+    @include box();
+    overflow: hidden;    
+    text-align: center;
+    animation: result-drop .8s ease-out;
+    margin-bottom: 1.5em;
+
+    dt {
+        font-size: 1.5em;
+    }
+
+    dd {
+        margin: .7em 0 2em 0;
+        font-weight: 700;
+        font-size: 1.7em;
+    }
+
+    .won {
+        color: green;
+    }
+
+    .lost {
+        color: red;
+    }
+}
+
+.car {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    z-index: -1;
+    opacity: .8;
+    width: 50%;
+    animation: sway 4s ease-in-out infinite;
+}
+
+.goat {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    z-index: -1;
+    opacity: .8;
+    width: 50%;
+    height: 50%;
+    animation: sway 4s ease-in-out infinite;
+}
+
+.tryAgainLink {
+    @include prefix(transition, all .3s, letter-spacing .1s .2s);
+    @include border-radius(5px);
+    text-decoration: unset;
+    color: #000;
+    font-size: 1.5em;    
+    text-align: center;
+    display: block;
+    background: $btncolor;
+    padding: 20px;
+    font-weight: 700;
+
+    &:hover {
+        letter-spacing: 5px;
+        background: $btncolor-hover;
+    }
+}

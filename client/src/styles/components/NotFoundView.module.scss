@@ -1,0 +1,21 @@
+@import '../_animations.scss';
+
+.notFoundViewContainer {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.largeErrorCode {
+    font-size: 7em;
+    letter-spacing: 10px;
+    margin-bottom: 5px;
+}
+
+.goatAnimation {
+    width: 80%;
+    height: 80%;
+    animation: sway 2s ease-in infinite;
+}

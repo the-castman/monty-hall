@@ -1,0 +1,36 @@
+$prefixes : webkit,moz,ms,o;
+
+$bgcolor: #e2e2e2;
+$btncolor: #03a9f4;
+$btncolor-hover: #5fe382;
+$formcolor: #fbfbfb;
+$control-border: darken($formcolor, 10%);
+
+
+@mixin prefix($property, $value...){
+  @each $prefix in $prefixes{
+    #{'-'+$prefix+'-'+$property} : $value;
+  }
+  #{$property}:$value;
+}
+
+@mixin border-radius($radius: 4px) {
+    @include prefix(border-radius, $radius);
+}
+
+@mixin box($bgcolor:$formcolor) {
+  @include border-radius(4px);
+  @include prefix(box-shadow, 1px 1px 10px rgba(0,0,0,.2));
+
+  background: $formcolor;
+  width: 600px;
+  padding: 2em;
+}
+
+@mixin input-base() {
+  width: 100%;
+  border: none;
+  border: 1px solid $control-border;
+  padding: 10px;
+  margin: 7px 0;
+}
