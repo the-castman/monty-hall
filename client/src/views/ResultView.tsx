@@ -48,7 +48,7 @@ const ResultView = ({ resultId }: IResultView) => {
     )
 }
 
-ResultView.ResultView = {
+ResultView.propTypes = {
     resultId: PropTypes.string
 }
 
